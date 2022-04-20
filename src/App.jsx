@@ -2,24 +2,20 @@ import './App.scss';
 import employees from './data/employees.json';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { Employee } from './components/Employee';
 
-const userIsExternal = false;
+const userIsExternal = true;
 
 function App() {
 	return (
 		<div className="App">
 			<Header userIsExternal={userIsExternal} />
-			<ul>
-				{employees.map((emp, index) => {
-					return (
-						<li>
-							{emp.firstName} {emp.lastName}
-						</li>
-					);
+			<div className="employees">
+				{employees.slice(0,3).map((emp, index) => {
+					return <Employee key={index} employee={emp} userIsExternal={userIsExternal} />;
 				})}
-			</ul>
+			</div>
 			<Footer userIsExternal={userIsExternal} />
-
 		</div>
 	);
 }

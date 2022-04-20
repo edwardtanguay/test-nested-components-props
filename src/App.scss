@@ -9,5 +9,23 @@ body {
 			font-size: .8rem;
 			color: #777;
 		}
+
+		.employee {
+			background-color: #222;
+			margin: 0 0 10px 0;
+			padding: 10px;
+			width: 600px;
+			.title {
+				color: rgb(181, 181, 82);
+			}
+			.notes {
+				color: #777;
+				font-style: italic;
+			}
+
+			&:first-of-type {
+				margin-top: 10px;
+			}
+		}
 	}
 }
