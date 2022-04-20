@@ -1,7 +1,11 @@
-export const Footer = () => {
+export const Footer = ({ userIsExternal }) => {
 	return (
-		<div className="footer">
-		&#169; All rights reserved. 
-		</div>
+		<>
+			{userIsExternal ? (
+				<div className="footer">&#169; All rights reserved.</div>
+			) : (
+				<div className="footer">"We are standing on the shoulders of giants."</div>
+			)}
+		</>
 	);
 };

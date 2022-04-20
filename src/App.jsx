@@ -3,10 +3,12 @@ import employees from './data/employees.json';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
+const userIsExternal = false;
+
 function App() {
 	return (
 		<div className="App">
-			<Header />
+			<Header userIsExternal={userIsExternal} />
 			<ul>
 				{employees.map((emp, index) => {
 					return (
@@ -16,7 +18,8 @@ function App() {
 					);
 				})}
 			</ul>
-			<Footer />
+			<Footer userIsExternal={userIsExternal} />
+
 		</div>
 	);
 }

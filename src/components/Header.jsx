@@ -1,10 +1,12 @@
-export const Header = () => {
+export const Header = ({ userIsExternal }) => {
 	return (
 		<>
 			<h1>Employee Site</h1>
-			<div className="description">
-			Please meet our team:
-			</div>
+			{userIsExternal ? (
+				<div className="description">Please meet our team:</div>
+			) : (
+				<div className="description">Summer picnic is May 15!</div>
+			)}
 		</>
 	);
 };
